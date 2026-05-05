@@ -1,0 +1,71 @@
+.donor-card {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem;
+  background-color: var(--card-bg);
+  transition: border-color 0.2s;
+}
+
+.donor-card:hover {
+  border-color: #999;
+}
+
+.donor-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.donor-card-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.blood-group-badge {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.donor-card-body p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.donor-card-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.contact-btn {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  background-color: #f0f0f0;
+  color: var(--text-color);
+  border: 1px solid #ccc;
+}
+
+.contact-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.remove-btn {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  background-color: #fff;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+}
+
+.remove-btn:hover {
+  background-color: #ffeeee;
+}
