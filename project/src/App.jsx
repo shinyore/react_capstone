@@ -1,17 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import DonorList from './pages/DonorList';
+import RegisterDonor from './pages/RegisterDonor';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import './App.css';
 
 function App() {
-  
-
   return (
-    <>
-      
-    </>
-  )
+    <Router>
+      <div className="app-container">
+        <Navbar />
+        <main className="app-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/donors" element={<DonorList />} />
+            <Route path="/register" element={<RegisterDonor />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
