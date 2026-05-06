@@ -1,4 +1,3 @@
-// Simulated static donor data for development
 let donorsList = [
   {
     id: 1,
@@ -55,7 +54,7 @@ export const addDonor = (donor) => {
   const newDonor = {
     ...donor,
     id: donorsList.length > 0 ? Math.max(...donorsList.map(d => d.id)) + 1 : 1,
-    // Provide some default dummy coords near NYC if real ones aren't provided
+  
     lat: donor.lat || 40.7128 + (Math.random() * 0.1 - 0.05),
     lng: donor.lng || -74.0060 + (Math.random() * 0.1 - 0.05),
   };

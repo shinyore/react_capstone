@@ -22,7 +22,7 @@ function Contact() {
     e.preventDefault();
     setStatus('Sending...');
     
-    // Simulate API call
+    
     setTimeout(() => {
       setStatus('Message sent successfully! We will get back to you soon.');
       setFormData({ name: '', email: '', subject: '', message: '' });

@@ -25,14 +25,14 @@ function RegisterDonor() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Use the api to add donor (in memory for this demo)
+  
     const newDonor = addDonor({
       ...formData,
       lat: formData.lat ? parseFloat(formData.lat) : undefined,
       lng: formData.lng ? parseFloat(formData.lng) : undefined,
     });
     
-    // Save the ID in localStorage to simulate that this user is "logged in"
+    
     localStorage.setItem('registeredDonorId', newDonor.id);
     
     setMessage('Registration successful! Redirecting to donors list...');

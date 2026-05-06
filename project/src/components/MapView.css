@@ -3,14 +3,13 @@
   width: 100%;
 }
 
-/* Ensure Leaflet map takes full height of parent */
+
 .leaflet-container {
   height: 100%;
   width: 100%;
-  z-index: 1; /* Keep it below any potential overlay menus */
+  z-index: 1; 
 }
 
-/* Style for popup content */
 .donor-popup h4 {
   margin: 0 0 5px 0;
   font-size: 1.1rem;
@@ -26,7 +25,6 @@
   font-weight: bold;
 }
 
-/* Optional: Make the user marker look different via CSS filter (e.g. blue to green) */
 .user-location-marker {
   filter: hue-rotate(120deg);
 }

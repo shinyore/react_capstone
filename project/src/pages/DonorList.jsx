@@ -9,19 +9,19 @@ function DonorList() {
   const [donors, setDonors] = useState([]);
   const { location, loading, error } = useLocation();
 
-  // Get the registered donor ID from local storage to simulate authentication
+ 
   const registeredDonorId = parseInt(localStorage.getItem('registeredDonorId'));
 
   useEffect(() => {
-    // Fetch donors from the static service
+
     setDonors(getDonors());
   }, []);
 
   const handleRemoveDonor = (id) => {
     removeDonor(id);
-    setDonors(getDonors()); // Refresh list from API
+    setDonors(getDonors());
     
-    // Clear the simulated session if they remove themselves
+   
     if (id === registeredDonorId) {
       localStorage.removeItem('registeredDonorId');
     }

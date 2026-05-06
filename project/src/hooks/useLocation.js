@@ -7,23 +7,22 @@ export const useLocation = () => {
 
   useEffect(() => {
     if (!navigator.geolocation) {
-      setError('Geolocation is not supported by your browser');
+      setError('Geolocation is not supported');
       setLoading(false);
       return;
     }
 
     navigator.geolocation.getCurrentPosition(
-      (position) => {
+      ({ coords }) => {
         setLocation({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
+          lat: coords.latitude,
+          lng: coords.longitude
         });
         setLoading(false);
       },
-      (error) => {
-        setError(error.message);
-        // Fallback to a default location (e.g., New York City) if location fails
-        setLocation({ lat: 40.7128, lng: -74.0060 });
+      (err) => {
+        setError(err.message);
+        setLocation({ lat: 40.7128, lng: -74.0060 }); // fallback
         setLoading(false);
       }
     );

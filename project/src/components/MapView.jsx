@@ -3,7 +3,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import './MapView.css';
 
-// Fix for default marker icons in Leaflet with Vite
+
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import iconRetina from 'leaflet/dist/images/marker-icon-2x.png';
@@ -21,7 +21,6 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-// Custom icon for the user's location (optional, using default here but could be styled)
 const userIcon = L.icon({
   iconUrl: icon,
   iconRetinaUrl: iconRetina,
@@ -31,10 +30,9 @@ const userIcon = L.icon({
   popupAnchor: [1, -34],
   tooltipAnchor: [16, -28],
   shadowSize: [41, 41],
-  className: 'user-location-marker' // We can apply a CSS filter to make it look different
+  className: 'user-location-marker' 
 });
 
-// Default center to NYC if user location is not available
 const defaultCenter = [40.7128, -74.0060];
 
 function MapView({ userLocation, donors }) {
@@ -53,7 +51,6 @@ function MapView({ userLocation, donors }) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {/* User Location Marker */}
         {userLocation && (
           <Marker position={[userLocation.lat, userLocation.lng]} icon={userIcon}>
             <Popup>
@@ -62,7 +59,6 @@ function MapView({ userLocation, donors }) {
           </Marker>
         )}
 
-        {/* Donor Markers */}
         {donors.map(donor => (
           <Marker key={donor.id} position={[donor.lat, donor.lng]}>
             <Popup>

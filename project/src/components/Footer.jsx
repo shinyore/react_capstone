@@ -2,13 +2,17 @@ import { Link } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <div className="footer-container">
+
         <div className="footer-section">
           <h4>Blood Donation Network</h4>
           <p>Connecting life-savers with those in need. Every drop counts.</p>
         </div>
+
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul className="footer-links">
@@ -17,6 +21,7 @@ function Footer() {
             <li><Link to="/register">Register as Donor</Link></li>
           </ul>
         </div>
+
         <div className="footer-section">
           <h4>Information</h4>
           <ul className="footer-links">
@@ -24,9 +29,11 @@ function Footer() {
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>
+
       </div>
+
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Blood Donation Network. All rights reserved.</p>
+        <p>&copy; {year} Blood Donation Network. All rights reserved.</p>
       </div>
     </footer>
   );
