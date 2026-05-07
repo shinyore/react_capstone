@@ -22,7 +22,7 @@ export const useLocation = () => {
       },
       (err) => {
         setError(err.message);
-        setLocation({ lat: 40.7128, lng: -74.0060 }); // fallback
+        setLocation({ lat: 40.7128, lng: -74.0060 });
         setLoading(false);
       }
     );
